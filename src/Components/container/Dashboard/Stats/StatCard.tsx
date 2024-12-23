@@ -1,4 +1,4 @@
-import { IStat } from "../../../types/project";
+import { IStat } from "../../../../types/project";
 
 interface IProps {
   stat: IStat;
