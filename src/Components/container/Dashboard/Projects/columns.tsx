@@ -18,10 +18,14 @@ export const useColumns = ({
   const { sharedState } = context || {};
 
   const handleDelete = (name: string) => async () => {
-    await mutate(PROJECTS_URL, (data?: IProjectT[]) => {
-      if (!data) return [];
-      return data.filter((p) => p.name !== name);
-    });
+    await mutate(
+      PROJECTS_URL,
+      (data?: IProjectT[]) => {
+        if (!data) return [];
+        return data.filter((p) => p.name !== name);
+      },
+      false
+    );
   };
 
   const handleDisable = (name: string) => async () => {
